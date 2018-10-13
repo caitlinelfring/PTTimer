@@ -1,0 +1,16 @@
+PODS:
+  - PTTimer (0.0.1)
+
+DEPENDENCIES:
+  - PTTimer (from `../PTTimer.podspec`)
+
+EXTERNAL SOURCES:
+  PTTimer:
+    :path: "../PTTimer.podspec"
+
+SPEC CHECKSUMS:
+  PTTimer: 948262dedb86c143338db27223a0a453215dad13
+
+PODFILE CHECKSUM: 051188efb9675de61a7db2a4df9eb7ae974982e5
+
+COCOAPODS: 1.5.3
