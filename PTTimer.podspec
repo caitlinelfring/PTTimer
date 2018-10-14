@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.homepage     = "http://github.com/caitlin615/PTTimer"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = "Caitlin Elfring"
-  s.platform     = :ios, "10.0"
-  s.swift_version = "4.2"
+  s.platform     = :ios, "9.0"
+  s.swift_version = "3"
   s.source = { :git => "https://github.com/caitlin615/PTTimer.git", :tag => s.version.to_s }
   s.source_files  = "Source/**/*"
   s.requires_arc = true

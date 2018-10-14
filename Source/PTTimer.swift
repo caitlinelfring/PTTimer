@@ -57,7 +57,7 @@ open class PTTimer {
     fatalError("elapsedTimeDidChange must be overridden in the subclass")
   }
 
-  func timerBlock(_ timer: Timer) {
+  @objc func timerBlock(_ timer: Timer) {
     let currentTime = Date.timeIntervalSinceReferenceDate
     self.elapsedTime = currentTime - self.startTime
     self.currentSeconds = self.elapsedTimeDidChange(elapsed: self.elapsedTime)
@@ -75,8 +75,12 @@ open class PTTimer {
       return
     }
     self.startTime = Date.timeIntervalSinceReferenceDate - TimeInterval(self.elapsedTime)
-    // TODO: Compatibility with older swift versions
-    self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: self.timerBlock)
+    if #available(iOS 10.0, *) {
+      self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: self.timerBlock)
+    } else {
+      // Fallback on earlier versions
+      self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.timerBlock), userInfo: nil, repeats: true)
+    }
     self.delegate?.timerDidStart?()
   }
 
