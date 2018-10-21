@@ -27,13 +27,13 @@ public enum PTTimerType: String {
 open class PTTimer {
   private var timer: Timer?
   private var startTime: TimeInterval!
-  private let initialTime: Int
+  private let startSeconds: Int
   private var elapsedTime = TimeInterval()
 
   open weak var delegate: PTTimerDelegate?
 
-  init(initialTime: Int = 0) {
-    self.initialTime = initialTime
+  init(startSeconds: Int = 0) {
+    self.startSeconds = startSeconds
   }
 
   private var currentSeconds: Int = 0 {
@@ -44,7 +44,7 @@ open class PTTimer {
     }
   }
 
-  /// state returns the current state of the timer
+  /// Current PTTimer.State of the timer
   open var state: State {
     if self.timer != nil {
       return .running
@@ -57,13 +57,13 @@ open class PTTimer {
     fatalError("elapsedTimeDidChange must be overridden in the subclass")
   }
 
-  @objc func timerBlock(_ timer: Timer) {
+  @objc private func timerBlock(_ timer: Timer) {
     let currentTime = Date.timeIntervalSinceReferenceDate
     self.elapsedTime = currentTime - self.startTime
     self.currentSeconds = self.elapsedTimeDidChange(elapsed: self.elapsedTime)
   }
 
-  /// Numner of seconds that the timer is currently at
+  /// Number of seconds that the timer is currently at
   open func seconds() -> Int {
     return self.currentSeconds
   }
@@ -90,12 +90,12 @@ open class PTTimer {
     self.delegate?.timerDidPause?()
   }
 
-  /// Reset the timer back to it's initial state. Override this to customize the timer's initial state.
+  /// Reset the timer back to its initial state. Override this to customize the timer's initial state.
   open func reset() {
     self.startTime = nil
     self.elapsedTime = 0
     self.invalidate()
-    self.currentSeconds = self.initialTime
+    self.currentSeconds = self.startSeconds
     self.delegate?.timerDidReset?()
   }
 

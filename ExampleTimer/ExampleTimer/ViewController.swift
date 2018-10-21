@@ -88,7 +88,7 @@ class ViewController: UIViewController {
     }
 
     if self.currentTimerType == .down {
-      self.timer = PTTimer.Down(initialTime: self.timerSeconds)
+      self.timer = PTTimer.Down(startSeconds: self.timerSeconds)
     } else {
       self.timer = PTTimer.Up(maxSeconds: self.timerSeconds)
     }

@@ -12,9 +12,9 @@ extension PTTimer {
   open class Down: PTTimer {
     private var startSeconds: Int
 
-    public override init(initialTime: Int) {
-      self.startSeconds = initialTime
-      super.init(initialTime: initialTime)
+    public override init(startSeconds: Int) {
+      self.startSeconds = startSeconds
+      super.init(startSeconds: startSeconds)
     }
 
     override open func elapsedTimeDidChange(elapsed: TimeInterval) -> Int {
