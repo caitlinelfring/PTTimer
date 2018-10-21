@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PTTimer"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "Simple Swift Timer framework"
 
   s.description  = <<-DESC
