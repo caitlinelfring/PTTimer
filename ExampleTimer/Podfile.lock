@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../PTTimer.podspec"
 
 SPEC CHECKSUMS:
-  PTTimer: cf19adba3d00bdcc44437f58495a40fc5d3daf52
+  PTTimer: d7ca277e8314db472fd826537be7cd676d1e43be
 
 PODFILE CHECKSUM: cdbbb9e466f5bed45405d21da79845a1d0a072e3
 
