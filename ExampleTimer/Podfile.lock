@@ -1,5 +1,5 @@
 PODS:
-  - PTTimer (1.1.0)
+  - PTTimer (1.1.1)
 
 DEPENDENCIES:
   - PTTimer (from `../PTTimer.podspec`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../PTTimer.podspec"
 
 SPEC CHECKSUMS:
-  PTTimer: d7ca277e8314db472fd826537be7cd676d1e43be
+  PTTimer: 7ecd01916138f706da99afb3a6bb743257ed3c35
 
 PODFILE CHECKSUM: cdbbb9e466f5bed45405d21da79845a1d0a072e3
 
