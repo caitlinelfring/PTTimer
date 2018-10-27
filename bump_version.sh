@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/bash -e
 
 VERSION=$1
 
 PODSPEC_FILENAME="PTTimer.podspec"
 if [ -z $VERSION ]; then
   echo "new version should be supplied at the first argument"
+  current=$(egrep "\.version\s+=" ${PODSPEC_FILENAME} | awk -F= '{print $2}')
+  echo "(current version is $current)"
   exit 1
 fi
 
