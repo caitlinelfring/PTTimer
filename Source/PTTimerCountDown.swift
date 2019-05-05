@@ -21,6 +21,7 @@ extension PTTimer {
       let current = self.startSeconds - Int(elapsed)
       if current <= 0 {
         self.pause()
+        return 0
       }
       return current
     }

@@ -20,6 +20,7 @@ extension PTTimer {
     override open func elapsedTimeDidChange(elapsed: TimeInterval) -> Int {
       if Int(elapsed) >= self.maxSeconds {
         self.pause()
+        return self.maxSeconds
       }
       return Int(elapsed)
     }
